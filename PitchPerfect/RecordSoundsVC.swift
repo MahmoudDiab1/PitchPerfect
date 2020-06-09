@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 class RecordSoundsVC: UIViewController, AVAudioRecorderDelegate {
-
+    
     @IBOutlet weak var recordingLable: UILabel!
     @IBOutlet weak var recordingButton: UIButton!
     @IBOutlet weak var stopRecordingButton: UIButton!
@@ -18,9 +18,9 @@ class RecordSoundsVC: UIViewController, AVAudioRecorderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         stopRecordingButton.isEnabled = false
-           
+        
     }
-
+    
     @IBAction func recordAudio(_ sender: Any) {
         
         stopRecordingButton.isEnabled = true
@@ -31,7 +31,7 @@ class RecordSoundsVC: UIViewController, AVAudioRecorderDelegate {
         let recordingName = "recordedVoice.wav"
         let pathArray = [dirPath, recordingName]
         let filePath = URL(string: pathArray.joined(separator: "/"))
-
+        
         let session = AVAudioSession.sharedInstance()
         try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
         
@@ -57,20 +57,20 @@ class RecordSoundsVC: UIViewController, AVAudioRecorderDelegate {
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         
-            if flag{
-                performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
-            } else {
-                print("Recording wasn't successful")
-            }
+        if flag{
+            performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
+        } else {
+            print("Recording wasn't successful")
         }
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "stopRecording"
-            {
-                let PlaySoundVC = segue.destination as! PlaySoundsVC
-                let recordedAudioURL = sender as! URL
-                PlaySoundVC.recordedAudioURL = recordedAudioURL
-            }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "stopRecording"
+        {
+            let PlaySoundVC = segue.destination as! PlaySoundsVC
+            let recordedAudioURL = sender as! URL
+            PlaySoundVC.recordedAudioURL = recordedAudioURL
         }
+    }
     
     
 }

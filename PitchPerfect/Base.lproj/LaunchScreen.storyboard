@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,13 +14,62 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aew-vD-AXu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Record" translatesAutoresizingMaskIntoConstraints="NO" id="0KS-iH-PGD">
+                                        <rect key="frame" x="122.5" y="268.5" width="130" height="130"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="130" id="KVW-R7-mMv"/>
+                                            <constraint firstAttribute="width" constant="130" id="qFQ-tq-YQc"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="itI-mv-Q7p">
+                                        <rect key="frame" x="0.0" y="330" width="375" height="7"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="7" id="cWs-H4-Lcw"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pitch Perfect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cN-8H-v0V">
+                                        <rect key="frame" x="30" y="418.5" width="315" height="25"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
+                                        <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0089107891540000008" green="0.41945886609999999" blue="0.4235331416" alpha="0.97501070205479456" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="0KS-iH-PGD" firstAttribute="centerX" secondItem="aew-vD-AXu" secondAttribute="centerX" id="3zd-9C-04j"/>
+                                    <constraint firstItem="3cN-8H-v0V" firstAttribute="top" secondItem="0KS-iH-PGD" secondAttribute="bottom" constant="20" id="6Qc-lN-hiC"/>
+                                    <constraint firstItem="itI-mv-Q7p" firstAttribute="centerY" secondItem="aew-vD-AXu" secondAttribute="centerY" id="BYh-L5-1vQ"/>
+                                    <constraint firstItem="itI-mv-Q7p" firstAttribute="leading" secondItem="aew-vD-AXu" secondAttribute="leading" id="FXa-PF-tFu"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3cN-8H-v0V" secondAttribute="trailing" constant="20" symbolic="YES" id="K9s-Za-YcJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="itI-mv-Q7p" secondAttribute="trailing" id="OrV-Il-Ccd"/>
+                                    <constraint firstItem="3cN-8H-v0V" firstAttribute="leading" secondItem="aew-vD-AXu" secondAttribute="leading" constant="30" id="aKd-RV-PmB"/>
+                                    <constraint firstItem="0KS-iH-PGD" firstAttribute="centerY" secondItem="aew-vD-AXu" secondAttribute="centerY" id="eHw-Gx-qri"/>
+                                    <constraint firstItem="3cN-8H-v0V" firstAttribute="centerX" secondItem="aew-vD-AXu" secondAttribute="centerX" id="sVD-9D-Bx2"/>
+                                    <constraint firstItem="itI-mv-Q7p" firstAttribute="centerX" secondItem="aew-vD-AXu" secondAttribute="centerX" id="syN-or-1MK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="aew-vD-AXu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0cb-DQ-U2k"/>
+                            <constraint firstItem="aew-vD-AXu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="0h5-zA-SPk"/>
+                            <constraint firstItem="aew-vD-AXu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GS8-2t-i7r"/>
+                            <constraint firstItem="aew-vD-AXu" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="v8F-OI-6Hj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.6305418719212"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Record" width="155" height="155"/>
+    </resources>
 </document>

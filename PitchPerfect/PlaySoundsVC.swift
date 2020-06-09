@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 class PlaySoundsVC: UIViewController {
-
+    
     @IBOutlet weak var reverbBtn: UIButton!
     @IBOutlet weak var slowBtn: UIButton!
     @IBOutlet weak var stopBtn: UIButton!
@@ -18,13 +18,14 @@ class PlaySoundsVC: UIViewController {
     @IBOutlet weak var highPitchBtn: UIButton!
     @IBOutlet weak var fastBtn: UIButton!
     
+    @IBOutlet weak var backgroundPlayView: UIView!
     
     var recordedAudioURL:URL!
     var audioFile:AVAudioFile!
     var audioEngine:AVAudioEngine!
     var audioPlayerNode: AVAudioPlayerNode!
     var stopTimer: Timer!
-
+    
     enum ButtonType: Int {
         case slow = 0, fast, HightPitch, lowPitch, echo, reverb
     }
@@ -35,7 +36,8 @@ class PlaySoundsVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-setupAudio()
+        backgroundPlayView.layer.cornerRadius = 20
+        setupAudio()
         
     }
     
@@ -54,7 +56,7 @@ setupAudio()
         case .reverb:
             playSound(reverb: true)
         }
-
+        
         configureUI(.playing)
     }
     
@@ -180,7 +182,7 @@ extension PlaySoundsVC: AVAudioPlayerDelegate {
         }
         
         configureUI(.notPlaying)
-                        
+        
         if let audioEngine = audioEngine {
             audioEngine.stop()
             audioEngine.reset()
@@ -196,7 +198,7 @@ extension PlaySoundsVC: AVAudioPlayerDelegate {
     }
     
     // MARK: UI Functions
-
+    
     func configureUI(_ playState: PlayingState) {
         switch(playState) {
         case .playing:
@@ -216,7 +218,7 @@ extension PlaySoundsVC: AVAudioPlayerDelegate {
         echoBtn.isEnabled = enabled
         reverbBtn.isEnabled = enabled
     }
-
+    
     func showAlert(_ title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: Alerts.DismissAlert, style: .default, handler: nil))
